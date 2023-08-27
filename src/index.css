@@ -1,13 +1,145 @@
-body {
+/* Reset some default styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* App layout */
+.App {
+  text-align: center;
+}
+
+/* Header */
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+/* Breeds list */
+.breeds-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.breeds-list ul {
+  list-style: none;
+}
+
+.breeds-list li {
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Modal */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Custom Search Modal */
+.custom-search-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-search-form label {
+  margin-bottom: 5px;
+}
+
+.custom-search-form select,
+.custom-search-form input,
+.custom-search-form button {
+  margin: 5px;
+  padding: 5px;
+}
+
+.custom-search-images {
+  margin-top: 20px;
+}
+
+.custom-search-images ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.custom-search-images li {
+  margin: 10px;
+}
+
+.custom-search-images img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .breeds-list {
+    flex-direction: column;
+  }
+
+  .modal-content {
+    max-width: 95%;
+    max-height: 90%;
+  }
+
+  .custom-search-form select,
+  .custom-search-form input,
+  .custom-search-form button {
+    width: 100%;
+  }
+}
+
+
+.cardParent{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+
+}
+.card{
+  margin-top: 15px;
+  border: 1px solid black;
+}
+.card img{
+  min-height: 300px;
+  max-height: 300px;
+  /* height: 300px;
+  width: 300px; */
 }
